@@ -19,6 +19,8 @@ jobs:
     plan:
       - get: pipelines
         trigger: yes
+        passed:
+          - self
       - set_pipeline: vaultui
         team: purringchaos
         file: pipelines/z/vaultui/pipeline.yml
