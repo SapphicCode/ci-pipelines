@@ -12,7 +12,7 @@ jobs:
       - get: pipelines
         trigger: yes
       - set_pipeline: self
-        file: pipeline.yml
+        file: pipelines/pipeline.yml
 
   - name: z-vaultui
     serial: yes
@@ -21,4 +21,4 @@ jobs:
         trigger: yes
       - set_pipeline: vaultui
         team: purringchaos
-        file: z/vaultui/pipeline.yml
+        file: pipelines/z/vaultui/pipeline.yml
