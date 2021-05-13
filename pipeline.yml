@@ -1,0 +1,24 @@
+resources:
+  - name: pipelines
+    icon: github
+    type: git
+    source:
+      uri: https://github.com/SapphicCode/ci-pipelines.git
+
+jobs:
+  - name: self
+    serial: yes
+    plan:
+      - get: pipelines
+        trigger: yes
+      - set_pipeline: self
+        file: pipeline.yml
+
+  - name: z-vaultui
+    serial: yes
+    plan:
+      - get: pipelines
+        trigger: yes
+      - set_pipeline: vaultui
+        team: purringchaos
+        file: z/vaultui/pipeline.yml

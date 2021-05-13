@@ -28,6 +28,7 @@ jobs:
             type: registry-image
             source:
               repository: docker.io/library/node
+              tag: lts
 
           run:
             path: bash
@@ -49,8 +50,8 @@ jobs:
 
           params:
             RCLONE_CONFIG_B2_TYPE: b2
-            RCLONE_CONFIG_B2_ACCOUNT: ((b2.account))
-            RCLONE_CONFIG_B2_KEY: ((b2.key))
+            RCLONE_CONFIG_B2_ACCOUNT: (("../phoenix/b2".account))
+            RCLONE_CONFIG_B2_KEY: (("../phoenix/b2".key))
           run:
             path: rclone
             args:
